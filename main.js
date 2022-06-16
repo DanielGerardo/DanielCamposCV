@@ -28,7 +28,7 @@ function mostrarProyectos(){
     let scrollTop = document.documentElement.scrollTop;
     for(var i=0; i <proyectos.length;i++){
         let alturaProyectos = proyectos[i].offsetTop;
-        if(alturaProyectos - 150< scrollTop){
+        if(alturaProyectos - 200< scrollTop){
             proyectos[i].style.opacity = 1;
             proyectos[i].style.animation = 'mostarArriba 2s';
             btnProyectos.style.borderBottom = '2px solid rgb(0, 89, 255)';
