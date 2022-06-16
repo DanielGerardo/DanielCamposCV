@@ -41,7 +41,7 @@ function mostrarProyectos(){
     }
     for(var i=0; i <tecnologias.length;i++){
         let alturaTecnologias = tecnologias[i].offsetTop;
-        if(alturaTecnologias - 150<= scrollTop&&alturaTecnologias +500> scrollTop){
+        if(alturaTecnologias - 200<= scrollTop&&alturaTecnologias +400> scrollTop){
             tecnologias[i].style.opacity = 1;
             tecnologias[i].style.animation = 'mostarArriba 2s';
             btnTecnologias.style.borderBottom = '2px solid rgb(0, 89, 255)';
