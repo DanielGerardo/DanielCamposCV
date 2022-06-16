@@ -1,0 +1,448 @@
+
+
+    $Shadow: 0 4px 4px rgba(0, 0, 0,0.3);
+    $colorText: rgb(13, 60, 163);
+    $colorFondo: rgba(255, 255, 255, 0.74);
+
+    .alert-class{
+        border-radius: 50%;
+        
+    }
+    @mixin contactoInput{
+        font-weight: 600;
+        width: 98%;
+        padding: 0.75em 1.25em;
+        margin: 0.5em 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        color: $colorText;
+    }
+    @mixin contactohover {
+        width: 100%;
+                box-shadow: $Shadow;
+    }
+    @mixin contactoInputSubmit {
+    font-weight: 1000;
+    width: 99%;
+    padding: 0.75em 1.25em;
+    margin: 0.5em 0;
+    display: inline-block;
+    background-color: rgba(0, 140, 255, 0.589);
+    border: 1px solid rgba(39, 148, 211, 0.356);
+    border-radius: 20px;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.548);
+    }
+    @mixin proyectosInputSubmit {
+    font-weight: 750;
+    width: 99%;
+    padding: 3px;
+    margin: 0.5em 0;
+    display: inline-block;
+    background-color: rgba(140, 255, 0, 0.589);
+    border: 1px solid rgba(148, 211, 39, 0.356);
+    border-radius: 20px;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.548);
+    }
+    @mixin barraTec($width) {
+        
+        font-size: .60em;
+        color: rgba(204, 204, 204, 0);
+        border-radius: 0 5px 5px 0;        
+        width: $width;
+        background: linear-gradient(270deg,#018a08ce,hsla(110, 100%, 50%, 0.692));
+    
+    }
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background: linear-gradient(180deg,#05a5a5ce,hsla(231, 100%, 50%, 0.692));
+    
+   /* background-color: #b0d2ff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80' width='80' height='80'%3E%3Cpath fill='%23000000' fill-opacity='0.11' d='M14 16H9v-2h5V9.87a4 4 0 1 1 2 0V14h5v2h-5v15.95A10 10 0 0 0 23.66 27l-3.46-2 8.2-2.2-2.9 5a12 12 0 0 1-21 0l-2.89-5 8.2 2.2-3.47 2A10 10 0 0 0 14 31.95V16zm40 40h-5v-2h5v-4.13a4 4 0 1 1 2 0V54h5v2h-5v15.95A10 10 0 0 0 63.66 67l-3.47-2 8.2-2.2-2.88 5a12 12 0 0 1-21.02 0l-2.88-5 8.2 2.2-3.47 2A10 10 0 0 0 54 71.95V56zm-39 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm40-40a2 2 0 1 1 0-4 2 2 0 0 1 0 4zM15 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm40 40a2 2 0 1 0 0-4 2 2 0 0 0 0 4z'%3E%3C/path%3E%3C/svg%3E");
+    */color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-family: 'Benne', serif;
+}
+
+
+
+ul{
+    list-style: none;
+
+}
+
+.content{
+   
+   z-index: 2;
+   width: 100%;
+   overflow: hidden;
+   position: fixed;
+   background-color: rgba(255, 255, 255, 0.834);
+   box-shadow: $Shadow;
+}
+
+
+.nav-main{
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    ul{
+        display: flex;
+        li {
+            padding: 0.30em;
+            a:hover {
+                border-bottom: 2px solid rgb(0, 89, 255);
+                font-weight: 1000;
+                cursor: pointer;
+               }
+        }
+    }
+}
+a{
+    color: black;
+    text-decoration: none;
+
+}
+.nav-brand{
+    width: 3.125em;
+
+}
+
+.nav-menu{
+
+    justify-content: space-between;
+}
+    @keyframes mostarArriba{
+        
+        0%{
+            
+            transform: translateY(80px);
+                
+        }
+        100%{
+            transform: translateX(0);
+        }
+    }
+    @keyframes mostarDerecha{
+    
+        0%{
+            
+            transform: translateX(-280px);
+                 
+        }
+        100%{
+            transform: translateX(0);
+        }
+    }
+    @keyframes mostarDerechaJs{
+    
+        0%{
+            
+            transform: translateX(-80px);
+                 
+        }
+        100%{
+            transform: translateX(0);
+        }
+    }
+    
+
+.dropdown{
+    position: relative;
+    display: none; 
+    
+}
+
+.dropdown-content{
+
+    display: none;
+    position: fixed;
+    
+    background-color: rgba(255, 255, 255, 0.834);
+    min-width: 160px;
+    box-shadow: $Shadow;
+    margin-top: 3.6px;
+    margin-left: -120px;
+    
+}
+.dropdown-content a{
+    padding: 12px 10px;
+    display: block;
+    
+    
+}
+.dropdown-content a:hover{
+    background-color: #f1f1f1;
+}
+.dropdown:hover .dropdown-btn{
+  background-color: #f1f1f150;
+  box-shadow: $Shadow;
+}
+
+.informacion{
+    background: linear-gradient(180deg,rgba(146, 221, 255, 0.623),rgba(169, 238, 250, 0.623));
+    border-radius: 1000px 1000px 500px 500px;   
+    text-align: center;
+    padding-top: 6.25em;
+    padding-bottom: 5.25em;
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 50%;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: $Shadow;
+    img {
+        max-width: 10em;
+        border-radius: 50%;
+        box-shadow: $Shadow;
+    }
+    p{
+        font-weight: 800;
+        font-size: 16px;
+        
+        
+    }
+    margin-bottom: 50px;
+}
+h2{
+    color: $colorText;
+    text-shadow: $Shadow;
+}
+#tecnologias{
+    margin: 0 auto;
+    max-width: 60%;
+    display: block;
+    align-items: center;
+    overflow: hidden;
+    padding: 0.625rem;
+    background-color:rgba(255, 255, 255, 0.51);
+    border-radius: 20px;
+    box-shadow: $Shadow;
+    #tec-header{
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        background-color: rgb(66, 164, 255);
+        padding-top: 40px;
+    h2{
+        color: white;
+        text-transform: uppercase;
+    }
+    }
+    li{
+        list-style: none;
+        width: 100%;
+        border-radius: 0 5px 5px 0;
+    }
+    .tec-li{           
+        background-color: white;
+       
+    }
+    #java{
+        @include barraTec(50%);
+    }
+    #Sass{
+        @include barraTec(30%);
+    }
+    #SQLServer{
+        @include barraTec(80%);
+    }
+    #MySQL{
+        
+        @include barraTec(80%);
+    }
+    #Js{
+        @include barraTec(10%);
+    }
+    #php{
+        @include barraTec(15%);
+        
+    }
+   margin-bottom: 100px;
+   
+}
+
+#proyectos{
+    opacity: 0;
+    width: 90%;
+    max-width: 62.5rem;
+    margin: 1.25rem auto;
+    display: grid;
+    grid-gap: 1.25rem;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(5,auto);
+    background-color: $colorFondo;
+    border-radius: 4px;
+    box-shadow: $Shadow;
+    h2{
+        padding-top: 40px;
+        color: white;
+        text-transform: uppercase;
+        
+    }
+    
+     .pro-gym img{
+         max-width: 100%;
+     }
+     .pro-appgym img{
+         
+         max-width: 55%;
+     }
+     
+}
+
+#proyectos > div,
+#proyectos #pro-header {
+    box-shadow: $Shadow; 
+    background-color: rgb(255, 255, 255);   
+	padding: 20px;
+	border-radius: 4px;
+    
+}
+#proyectos #pro-header {
+    
+	background-color: rgb(66, 164, 255);
+	grid-column-start: 1;
+    grid-column-end: -1;
+    height: 100px;
+	text-align: center;
+	display: flex;   
+	align-items: center;
+	justify-content: center;
+    overflow: hidden;
+    
+}
+#proyectos .pro-gym{
+  grid-row-start: 2;
+  grid-row-end: 5;
+  padding: 10px;
+  
+  p{
+    input[type=submit]{
+        @include proyectosInputSubmit();
+    }
+
+    input[type=submit]:hover{
+        color: black;
+        background-color: rgb(140, 255, 0);
+        box-shadow: $Shadow;
+    }
+    
+}
+}
+.materialboxed:hover{
+    box-shadow: $Shadow;
+}
+#proyectos .pro-appgym{
+    
+    grid-row-start: 2;
+    grid-row-end: 5;
+    text-align: left;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+    
+    p{
+        padding: 10px;
+        #tituloAPP{
+            font-size: 15px;
+        }
+        input[type=submit]{
+            @include proyectosInputSubmit();
+        }
+        input[type=submit]:hover{
+            color: black;
+            background-color: rgb(140, 255, 0);
+            box-shadow: $Shadow;
+        }
+        
+    }
+    
+  }
+  
+
+#contacto{
+    text-transform: uppercase;
+    margin: 0 auto;
+    max-width: 60%;
+    align-items: center;
+    overflow: hidden;
+    padding: 0.625rem;
+    margin-top: 150px;
+    margin-bottom: 20px;
+    background: linear-gradient(
+120deg
+,rgba(121,251,255,.467),rgba(255, 255, 255, 0.412));
+    border-radius: 50px;
+    box-shadow: $Shadow;
+    
+    input[type=text]{
+        @include contactoInput();
+    }
+    input[type=text]:hover{
+        @include contactohover();
+    }
+    input[type=email]{
+        @include contactoInput();
+    }
+    input[type=email]:hover{
+        @include contactohover();
+        }
+    input[type=submit]{
+        @include contactoInputSubmit();
+    }
+    input[type=submit]:hover{
+        @include contactohover();
+        color: white;
+        background-color: rgb(0, 140, 255);
+        }
+    textarea{
+        @include contactoInput();
+    }
+    textarea:hover{
+        @include contactohover();
+    } 
+
+}
+
+.box-redes{
+   list-style: none;
+   width: 100%;
+   background: linear-gradient(0deg,rgba(0, 11, 112, 0.63),rgba(0, 24, 238, 0.479),rgba(3, 78, 219, 0.61),hsla(219, 100%, 50%, 0));
+   padding: 30px;
+   display: flex;
+   justify-content: center;
+   
+}
+
+.box-redes li{ 
+    display: flex;
+    justify-content: space-between;
+    max-width: 25%;
+    font-size: 16px;
+    color: white;
+    
+}
+.box-redes a{
+    
+    padding: 10px;
+}
+.box-redes a img{
+    width: 30px;
+    
+}
+
+
+
+
